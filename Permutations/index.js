@@ -22,4 +22,3 @@ var permute = function(nums){
     doPermute(0,nums);
     return result;
 }
-console.log(permute([1,2,3]))
