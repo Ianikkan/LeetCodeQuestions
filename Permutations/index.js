@@ -1,30 +1,24 @@
 /**
- * @param {number[]} nums
+ * 
+ * @param {number[]} nums 
  * @return {number[][]}
  */
-var permute = function(nums) {
-    var result = [];
-    var doPermute = function(fixed, nums) {
-      if (fixed === nums.length - 1) {
-        result.push(nums);
-        return;
-      }
-      for (let i = fixed; i < nums.length; i++) {
-        let tempNums = Array.from(nums);
-        swap(fixed, i, tempNums);
-        doPermute(fixed + 1, tempNums);
-      }
-    };
-    doPermute(0, nums);
-    return result;
-};
 
+var permute = function(nums){
+    var result = [];    
+   function doPermute(fl, nums){
+        if(fl === nums.length -1){
+            result.push(nums)
+        }
+        else{
+            for(let i = fl; i < nums.length; i++){
+                let temp = [...nums];
+                [temp[fl], temp[i]] = [temp[i],temp[fl]];
+                doPermute(fl+1, temp)
+            }
+        }
 
-
-var swap = function(l,r,nums){
-    let temp = nums[l];
-    nums[l] = nums[r];
-    nums[r] = temp;
     }
-
-console.log(permute([]));
+    doPermute(0,nums);
+    return result;
+}
