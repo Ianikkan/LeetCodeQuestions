@@ -9,3 +9,11 @@ var kClosest = function(points, K) {
     })
    return sorted.slice(0,K)
 };
+
+
+
+let x = ["a12 123", "b123 ab", "123 cff", "123 456" ];
+
+let y = x.filter(word => word.match(/^.*\s\d/));
+
+console.log(y);
