@@ -1,0 +1,23 @@
+{
+  "name": "leet-code-problmes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "jslint": "^0.12.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ianikkan/LeetCodeQuestions.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ianikkan/LeetCodeQuestions/issues"
+  },
+  "homepage": "https://github.com/Ianikkan/LeetCodeQuestions#readme"
+}
