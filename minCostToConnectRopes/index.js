@@ -12,7 +12,8 @@ var minCostToConnectRopes = ropes => {
     currCost += ropes[i];
     costs.push(currCost);
   }
-  return costs.reduce((acc, cur) => acc  + cur)
+  let result =  costs.reduce((acc, cur) => acc  + cur)
+  return result
 };
 
 minCostToConnectRopes([1, 2, 5, 10, 35, 89]);
