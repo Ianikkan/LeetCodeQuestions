@@ -3,34 +3,27 @@
  * @param {number[][]} matrix
  * @return {void} Do not return anything, modify matrix in-place instead.
  */
+/**
+ * @param {number[][]} matrix
+ * @return {void} Do not return anything, modify matrix in-place instead.
+ */
 var rotate = function(matrix) {
-    const n = matrix.length - 1;
-    
-    const rotateUnit = (i,j) => {
-        let temp, temp2;
-        //first 
-        temp = matrix[j][n-i];
-        matrix[j][n-i] = matrix[i][j];
+    let len = matrix.length-1;
+    for(let i = 0; i < len; i++){
+        for (let j = i; j < len-i; j++){
+            let temp = matrix[j][len-i]
+            matrix[j][len-i] = matrix[i][j]
 
-        //second 
-        temp2 = matrix[n-i][n-j];
-        matrix[n-i][n-j] = temp;
-        temp = temp2;
+            matrix[i][j] = matrix[len-i][len-j]
+            matrix[len-i][len-j] = temp
 
-        //third 
-        temp2 = matrix[n-j][i];
-        matrix[n-j][i] = temp;
-        temp = temp2;
+            temp = matrix[len-j][i]
+            matrix[len-j][i] = matrix[i][j]
 
-        //fourth 
-        matrix[i][j] = temp;
-
-    }
-
-    for(let i = 0; i < n; i++)
-        for(let j = i; j < n - i; j++){
-            rotateUnit(i,j);
+            matrix[i][j] = temp;
         }
-
+    }
 }
+
+rotate([[1,2,3],[4,5,6],[7,8,9]])
 
